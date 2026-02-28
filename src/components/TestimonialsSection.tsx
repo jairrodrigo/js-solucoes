@@ -5,7 +5,7 @@ const testimonials = [
     {
         name: "Ricardo Mendes",
         role: "Corretor de imóveis",
-        text: "O nível de acabamento da JC Soluções é impressionante. Fizemos todo o porcelanato e a pintura fina com eles. O nivelamento ficou perfeito, sem qualquer ressalto.",
+        text: "O nível de acabamento da JC Construções é impressionante. Fizemos todo o porcelanato e a pintura fina com eles. O nivelamento ficou perfeito, sem qualquer ressalto.",
     },
     {
         name: "Carla Silveira",

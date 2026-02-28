@@ -32,13 +32,13 @@ const Header = () => {
               <div className="absolute -inset-1 bg-secondary rounded-lg blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
               <img
                 src="/logo.png"
-                alt="JC Soluções Logo"
+                alt="JC Construções Logo"
                 className={`transition-all duration-500 ${isScrolled ? 'h-12 md:h-14' : 'h-16 md:h-20'} object-contain relative`}
               />
             </div>
             <div className="hidden lg:flex flex-col">
               <span className="text-xl font-black text-white tracking-tighter leading-none">
-                JC <span className="text-secondary text-shadow-glow">SOLUÇÕES</span>
+                JC <span className="text-secondary text-shadow-glow">CONSTRUÇÕES</span>
               </span>
               <span className="text-[9px] uppercase tracking-[0.4em] font-bold text-secondary-light/80">
                 Obras & Acabamentos

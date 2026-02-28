@@ -16,10 +16,10 @@ const Footer = () => {
           {/* Brand & CNPJ */}
           <div className="space-y-6 md:space-y-8 text-center md:text-left">
             <div className="flex flex-col gap-4">
-              <img src="/logo.png" alt="JC Soluções" className="h-16 md:h-20 object-contain w-fit mx-auto md:mx-0" />
+              <img src="/logo.png" alt="JC Construções" className="h-16 md:h-20 object-contain w-fit mx-auto md:mx-0" />
               <div>
                 <span className="text-2xl md:text-3xl font-black text-white tracking-tighter uppercase leading-none">
-                  JC <span className="text-secondary">SOLUÇÕES</span>
+                  JC <span className="text-secondary">CONSTRUÇÕES</span>
                 </span>
                 <span className="block text-[8px] md:text-[10px] uppercase tracking-[0.4em] font-black text-secondary-light/60 mt-1">
                   Obras & Acabamentos
@@ -78,7 +78,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="pt-12 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-white/40 text-xs font-black uppercase tracking-widest text-center md:text-left">
-            © {new Date().getFullYear()} JC Soluções - Todos os direitos reservados.
+            © {new Date().getFullYear()} JC Construções - Todos os direitos reservados.
           </p>
           <div className="flex gap-8">
             <span className="text-white/40 text-[10px] font-black uppercase tracking-[0.2em] border-b border-white/10 pb-1">Alta Performance</span>
