@@ -1,121 +1,88 @@
-import { Facebook, Instagram, Linkedin, Mail, Phone } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { MessageSquare, MapPin, Phone } from "lucide-react";
 
 const Footer = () => {
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+  const openWhatsApp = () => {
+    window.open("https://wa.me/5515998070993?text=Olá,%20gostaria%20de%20solicitar%20um%20orçamento%20especializado.", "_blank");
   };
 
-  const menuLinks = [
-    { label: "Início", id: "inicio" },
-    { label: "Serviços", id: "servicos" },
-    { label: "Sobre", id: "sobre" },
-    { label: "Benefícios", id: "beneficios" },
-    { label: "Contato", id: "contato" },
-  ];
-
-  const socialLinks = [
-    { icon: Facebook, href: "#", label: "Facebook" },
-    { icon: Instagram, href: "#", label: "Instagram" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
-  ];
-
   return (
-    <footer className="bg-primary text-primary-foreground">
-      <div className="container-custom py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Brand */}
-          <div className="space-y-4">
-            <h3 className="text-2xl font-bold">
-              JC <span className="text-secondary">Soluções</span>
-            </h3>
-            <p className="text-primary-foreground/80 text-sm">
-              Especialistas em instalações e montagens comerciais com qualidade e
-              eficiência.
+    <footer className="bg-primary pt-16 md:pt-28 pb-12 border-t border-white/10 relative overflow-hidden">
+      {/* Decorative Blur */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-secondary/5 rounded-full blur-[120px] opacity-30"></div>
+
+      <div className="container-custom relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-16 mb-20 md:mb-24">
+          {/* Brand & CNPJ */}
+          <div className="space-y-6 md:space-y-8 text-center md:text-left">
+            <div className="flex flex-col gap-4">
+              <img src="/logo.png" alt="JC Soluções" className="h-16 md:h-20 object-contain w-fit mx-auto md:mx-0" />
+              <div>
+                <span className="text-2xl md:text-3xl font-black text-white tracking-tighter uppercase leading-none">
+                  JC <span className="text-secondary">SOLUÇÕES</span>
+                </span>
+                <span className="block text-[8px] md:text-[10px] uppercase tracking-[0.4em] font-black text-secondary-light/60 mt-1">
+                  Obras & Acabamentos
+                </span>
+              </div>
+            </div>
+            <p className="text-white/60 text-base md:text-lg font-medium italic leading-relaxed max-w-xs mx-auto md:mx-0">
+              Excelência técnica e compromisso absoluto com o alto padrão em Sorocaba.
             </p>
-            <div className="flex space-x-3">
-              {socialLinks.map((social, index) => (
-                <a
-                  key={index}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full bg-primary-foreground/10 hover:bg-secondary flex items-center justify-center transition-colors duration-300"
-                  aria-label={social.label}
-                >
-                  <social.icon className="w-5 h-5" />
-                </a>
-              ))}
+            <div className="text-white/40 text-[10px] md:text-xs font-black tracking-widest uppercase">
+              CNPJ: 58.445.151/0001-33
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div className="space-y-4">
-            <h4 className="text-lg font-bold">Links Rápidos</h4>
-            <ul className="space-y-2">
-              {menuLinks.map((link, index) => (
-                <li key={index}>
-                  <button
-                    onClick={() => scrollToSection(link.id)}
-                    className="text-primary-foreground/80 hover:text-secondary transition-colors text-sm"
-                  >
-                    {link.label}
-                  </button>
-                </li>
-              ))}
+          {/* Contact Details */}
+          <div className="space-y-6 md:space-y-8 text-center md:text-left">
+            <h4 className="text-white font-black text-lg md:text-xl uppercase tracking-[0.2em]">Contato</h4>
+            <ul className="space-y-5 md:space-y-6">
+              <li className="flex items-center gap-4 md:gap-5 text-white/90 justify-center md:justify-start group cursor-pointer">
+                <div className="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0 transition-all duration-300 group-hover:bg-secondary group-hover:scale-110 group-hover:shadow-vibrant">
+                  <Phone size={20} className="text-secondary group-hover:text-primary transition-colors md:w-6 md:h-6" />
+                </div>
+                <div>
+                  <p className="text-[10px] md:text-xs text-secondary-light uppercase tracking-widest font-black">WhatsApp Direto</p>
+                  <p className="text-xl md:text-2xl font-black tracking-tighter">(15) 99807-0993</p>
+                </div>
+              </li>
+              <li className="flex items-center gap-4 md:gap-5 text-white/90 justify-center md:justify-start group cursor-pointer">
+                <div className="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0 transition-all duration-300 group-hover:bg-secondary group-hover:scale-110 group-hover:shadow-vibrant">
+                  <MapPin size={20} className="text-secondary group-hover:text-primary transition-colors md:w-6 md:h-6" />
+                </div>
+                <div>
+                  <p className="text-[10px] md:text-xs text-secondary-light uppercase tracking-widest font-black">Área de Atuação</p>
+                  <p className="text-xl md:text-2xl font-black tracking-tighter uppercase">Sorocaba e Região</p>
+                </div>
+              </li>
             </ul>
           </div>
 
-          {/* Services */}
-          <div className="space-y-4">
-            <h4 className="text-lg font-bold">Serviços</h4>
-            <ul className="space-y-2 text-primary-foreground/80 text-sm">
-              <li>Montagem de Mobiliário</li>
-              <li>Infraestrutura Elétrica</li>
-              <li>Comunicação Visual</li>
-              <li>Consultoria e Planejamento</li>
-            </ul>
-          </div>
-
-          {/* Contact */}
-          <div className="space-y-4">
-            <h4 className="text-lg font-bold">Contato</h4>
-            <div className="space-y-3">
-              <a
-                href="tel:+5511987654321"
-                className="flex items-center space-x-2 text-primary-foreground/80 hover:text-secondary transition-colors text-sm"
-              >
-                <Phone className="w-4 h-4" />
-                <span>(11) 98765-4321</span>
-              </a>
-              <a
-                href="mailto:contato@jcsolucoes.com.br"
-                className="flex items-center space-x-2 text-primary-foreground/80 hover:text-secondary transition-colors text-sm"
-              >
-                <Mail className="w-4 h-4" />
-                <span>contato@jcsolucoes.com.br</span>
-              </a>
-            </div>
+          {/* Final CTA */}
+          <div className="lg:col-span-2 space-y-8 md:space-y-10 text-center md:text-left bg-white/5 p-6 md:p-12 rounded-3xl md:rounded-[2.5rem] border border-white/10 backdrop-blur-sm animate-float-slow">
+            <h4 className="text-2xl md:text-5xl font-black text-white uppercase tracking-tighter leading-[0.9]">
+              PRONTO PARA <span className="text-secondary text-shadow-glow">VALORIZAR</span> SEU IMÓVEL?
+            </h4>
+            <Button
+              size="lg"
+              onClick={openWhatsApp}
+              className="bg-secondary hover:bg-secondary-light text-primary-dark font-black text-xl md:text-2xl px-10 md:px-16 py-8 md:py-10 rounded-full shadow-vibrant transition-all duration-500 hover:scale-110 flex items-center gap-5 w-full sm:w-auto mx-auto md:mx-0 justify-center"
+            >
+              <MessageSquare size={28} className="md:w-8 md:h-8" />
+              SOLICITAR ORÇAMENTO AGORA
+            </Button>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-primary-foreground/10">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-primary-foreground/60 text-sm text-center md:text-left">
-              © {new Date().getFullYear()} JC Soluções - Todos os direitos
-              reservados.
-            </p>
-            <div className="flex space-x-6 text-primary-foreground/60 text-sm">
-              <button className="hover:text-secondary transition-colors">
-                Política de Privacidade
-              </button>
-              <button className="hover:text-secondary transition-colors">
-                Termos de Uso
-              </button>
-            </div>
+        <div className="pt-12 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
+          <p className="text-white/40 text-xs font-black uppercase tracking-widest text-center md:text-left">
+            © {new Date().getFullYear()} JC Soluções - Todos os direitos reservados.
+          </p>
+          <div className="flex gap-8">
+            <span className="text-white/40 text-[10px] font-black uppercase tracking-[0.2em] border-b border-white/10 pb-1">Alta Performance</span>
+            <span className="text-white/40 text-[10px] font-black uppercase tracking-[0.2em] border-b border-white/10 pb-1">Alto Padrão Técnico</span>
           </div>
         </div>
       </div>

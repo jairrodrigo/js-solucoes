@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { MessageSquare } from "lucide-react";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,91 +13,58 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-      setIsMobileMenuOpen(false);
-    }
+  const openWhatsApp = () => {
+    window.open("https://wa.me/5515998070993?text=Olá,%20gostaria%20de%20solicitar%20um%20orçamento%20especializado.", "_blank");
   };
-
-  const menuItems = [
-    { label: "Início", id: "inicio" },
-    { label: "Serviços", id: "servicos" },
-    { label: "Sobre", id: "sobre" },
-    { label: "Benefícios", id: "beneficios" },
-    { label: "Contato", id: "contato" },
-  ];
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-background/95 backdrop-blur-md shadow-md"
-          : "bg-white"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled
+        ? "bg-primary backdrop-blur-md py-3 shadow-2xl"
+        : "bg-transparent py-6"
+        }`}
     >
       <nav className="container-custom">
-        <div className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <div className="flex items-center">
-            <span className="text-2xl font-bold text-primary">
-              JC <span className="text-secondary">Soluções</span>
-            </span>
-          </div>
-
-          {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8">
-            {menuItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className="text-foreground hover:text-primary transition-colors font-medium"
-              >
-                {item.label}
-              </button>
-            ))}
-            <Button
-              onClick={() => scrollToSection("contato")}
-              className="bg-secondary hover:bg-secondary/90 text-secondary-foreground font-semibold"
-            >
-              Solicitar Orçamento
-            </Button>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden text-foreground"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </div>
-
-        {/* Mobile Menu */}
-        {isMobileMenuOpen && (
-          <div className="md:hidden bg-background border-t border-border py-4">
-            <div className="flex flex-col space-y-4">
-              {menuItems.map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className="text-foreground hover:text-primary transition-colors font-medium text-left px-4"
-                >
-                  {item.label}
-                </button>
-              ))}
-              <div className="px-4 pt-2">
-                <Button
-                  onClick={() => scrollToSection("contato")}
-                  className="w-full bg-secondary hover:bg-secondary/90 text-secondary-foreground font-semibold"
-                >
-                  Solicitar Orçamento
-                </Button>
-              </div>
+        <div className="flex items-center justify-between gap-4">
+          {/* Logo Branding */}
+          <div className="flex items-center gap-3 group cursor-pointer shrink-0">
+            <div className="relative">
+              <div className="absolute -inset-1 bg-secondary rounded-lg blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+              <img
+                src="/logo.png"
+                alt="JC Soluções Logo"
+                className={`transition-all duration-500 ${isScrolled ? 'h-12 md:h-14' : 'h-16 md:h-20'} object-contain relative`}
+              />
+            </div>
+            <div className="hidden lg:flex flex-col">
+              <span className="text-xl font-black text-white tracking-tighter leading-none">
+                JC <span className="text-secondary text-shadow-glow">SOLUÇÕES</span>
+              </span>
+              <span className="text-[9px] uppercase tracking-[0.4em] font-bold text-secondary-light/80">
+                Obras & Acabamentos
+              </span>
             </div>
           </div>
-        )}
+
+          {/* Persistent CTA */}
+          <Button
+            onClick={openWhatsApp}
+            size="lg"
+            className="bg-secondary hover:bg-secondary-light text-primary font-black transition-all duration-300 hover:scale-110 shadow-vibrant hidden sm:flex items-center gap-2 group"
+          >
+            <MessageSquare size={18} className="group-hover:animate-bounce" />
+            SOLICITAR MEU ORÇAMENTO
+          </Button>
+
+          {/* Mobile CTA (Smaller) */}
+          <Button
+            onClick={openWhatsApp}
+            size="sm"
+            className="sm:hidden bg-secondary hover:bg-secondary-light text-primary font-black px-5 py-6 rounded-xl hover:scale-105 active:scale-95 shadow-lg shrink-0"
+          >
+            ORÇAMENTO
+          </Button>
+        </div>
       </nav>
     </header>
   );
