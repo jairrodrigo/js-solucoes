@@ -44,19 +44,19 @@ const FAQSection = () => {
             <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/5 rounded-full -translate-x-1/2 translate-y-1/2 blur-3xl opacity-50"></div>
 
             <div className="container-custom relative z-10">
-                <div className="grid lg:grid-cols-2 gap-12 md:gap-20 items-center">
-                    <div className="space-y-6 md:space-y-8">
-                        <h2 className="text-3xl md:text-6xl font-black text-primary tracking-tighter uppercase leading-none">
+                <div className="grid lg:grid-cols-2 gap-10 md:gap-20 items-center">
+                    <div className="space-y-6 md:space-y-8 text-center lg:text-left">
+                        <h2 className="text-4xl md:text-6xl font-black text-primary tracking-tighter uppercase leading-none">
                             PERGUNTAS <span className="text-secondary text-shadow-glow">FREQUENTES</span>
                         </h2>
-                        <p className="text-lg md:text-xl text-muted-foreground font-medium italic">
+                        <p className="text-lg md:text-xl text-muted-foreground font-medium italic max-w-lg mx-auto lg:mx-0">
                             Respondemos suas principais dúvidas para garantir total clareza na sua decisão.
                         </p>
                         <div className="pt-2 md:pt-4">
                             <Button
                                 size="lg"
                                 onClick={openWhatsApp}
-                                className="bg-primary hover:bg-primary-light text-white font-black text-lg md:text-xl px-8 md:px-12 py-7 md:py-9 rounded-full shadow-vibrant flex items-center justify-center gap-4 animate-float-slow w-full sm:w-auto"
+                                className="bg-primary hover:bg-primary-light text-white font-black text-lg md:text-xl px-10 md:px-12 py-8 md:py-10 rounded-2xl md:rounded-full shadow-vibrant flex items-center justify-center gap-4 animate-float-slow w-full sm:w-auto mx-auto lg:mx-0"
                             >
                                 <MessageSquare size={24} />
                                 AINDA TENHO DÚVIDAS
@@ -64,10 +64,10 @@ const FAQSection = () => {
                         </div>
                     </div>
 
-                    <div className="bg-white p-5 md:p-12 rounded-3xl md:rounded-[2.5rem] shadow-vibrant border border-primary/5 mt-8 md:mt-0">
+                    <div className="bg-white p-6 md:p-12 rounded-[2rem] md:rounded-[2.5rem] shadow-vibrant border border-primary/5 mt-10 md:mt-0">
                         <Accordion type="single" collapsible className="w-full">
                             {faqs.map((faq, i) => (
-                                <AccordionItem key={i} value={`item-${i}`} className="border-b border-primary/5 py-2 md:py-3 last:border-0 group">
+                                <AccordionItem key={i} value={`item-${i}`} className="border-b border-primary/5 py-1 md:py-3 last:border-0 group">
                                     <AccordionTrigger className="text-left text-lg md:text-xl font-black text-primary hover:no-underline hover:text-secondary transition-all group-data-[state=open]:text-secondary group-data-[state=open]:pb-6">
                                         {faq.q}
                                     </AccordionTrigger>

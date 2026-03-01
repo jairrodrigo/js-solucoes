@@ -48,9 +48,9 @@ const ProjectsCarousel = () => {
             <div className="absolute top-0 right-0 w-64 h-64 bg-secondary/5 blur-[100px] rounded-full -translate-y-1/2 translate-x-1/2"></div>
 
             <div className="container-custom relative z-10">
-                <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20 space-y-6">
-                    <span className="text-secondary font-black tracking-[0.4em] uppercase text-xs md:text-sm drop-shadow-sm">Nosso Portfolio</span>
-                    <h2 className="text-3xl md:text-6xl font-black text-primary tracking-tighter uppercase leading-[0.9]">
+                <div className="text-center max-w-3xl mx-auto mb-10 md:mb-20 space-y-4 md:space-y-6">
+                    <span className="text-secondary font-black tracking-[0.4em] uppercase text-[10px] md:text-sm drop-shadow-sm">Nosso Portfolio</span>
+                    <h2 className="text-4xl md:text-6xl font-black text-primary tracking-tighter uppercase leading-[0.9]">
                         PROJETOS QUE <span className="text-secondary text-shadow-glow">INSPIRAM</span>
                     </h2>
                     <div className="h-2 w-24 bg-secondary mx-auto rounded-full"></div>
@@ -66,13 +66,13 @@ const ProjectsCarousel = () => {
                         loop: true,
                     }}
                 >
-                    <CarouselContent className="-ml-4">
+                    <CarouselContent className="-ml-3 md:-ml-4">
                         {projects.map((project, index) => (
-                            <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/2">
+                            <CarouselItem key={index} className="pl-3 md:pl-4 basis-[85%] md:basis-1/2 lg:basis-1/2">
                                 <Card className="border-none bg-transparent group cursor-grab active:cursor-grabbing">
-                                    <CardContent className="p-0 relative overflow-hidden rounded-[2rem] shadow-vibrant border border-primary/5">
+                                    <CardContent className="p-0 relative overflow-hidden rounded-[2rem] md:rounded-[2.5rem] shadow-vibrant border border-primary/5">
                                         {/* Image with hover effect */}
-                                        <div className="aspect-[4/3] overflow-hidden">
+                                        <div className="aspect-[4/5] md:aspect-[4/3] overflow-hidden">
                                             <img
                                                 src={project.image}
                                                 alt={project.title}
@@ -81,7 +81,7 @@ const ProjectsCarousel = () => {
                                         </div>
 
                                         {/* Text Overlay */}
-                                        <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8 md:p-12">
+                                        <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6 md:p-12">
                                             <h3 className="text-white font-black text-xl md:text-3xl uppercase tracking-tighter leading-none mb-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                                                 {project.title}
                                             </h3>
@@ -90,11 +90,12 @@ const ProjectsCarousel = () => {
                                             </p>
                                         </div>
 
-                                        {/* Badge for Always visible title in mobile if needed, but let's stick to premium hover */}
-                                        <div className="absolute bottom-4 left-4 right-4 bg-white/10 backdrop-blur-md p-4 rounded-2xl border border-white/20 md:hidden">
-                                            <h3 className="text-white font-black text-sm uppercase tracking-tighter leading-none">
+                                        {/* mobile Title Badge - semi-transparent */}
+                                        <div className="absolute bottom-4 left-4 right-4 bg-primary/40 backdrop-blur-md p-4 rounded-2xl border border-white/10 md:hidden flex justify-between items-center">
+                                            <h3 className="text-white font-black text-xs uppercase tracking-tighter leading-none">
                                                 {project.title}
                                             </h3>
+                                            <div className="w-6 h-1 bg-secondary rounded-full"></div>
                                         </div>
                                     </CardContent>
                                 </Card>
@@ -107,10 +108,10 @@ const ProjectsCarousel = () => {
                     </div>
                 </Carousel>
 
-                {/* Call to action below carousel */}
-                <div className="mt-16 text-center">
-                    <p className="text-muted-foreground font-medium italic text-lg mb-8">
-                        Cada obra é tratada como uma obra de arte única.
+                {/* footer quote */}
+                <div className="mt-12 text-center">
+                    <p className="text-muted-foreground font-medium italic text-base md:text-lg mb-8 max-w-lg mx-auto">
+                        Cada obra é tratada como uma obra de arte única, com precisão técnica absoluta.
                     </p>
                 </div>
             </div>
