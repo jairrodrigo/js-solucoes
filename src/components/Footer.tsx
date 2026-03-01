@@ -85,6 +85,45 @@ const Footer = () => {
             <span className="text-white/30 text-[9px] font-black uppercase tracking-[0.2em] border-b border-white/5 pb-1">Alto Padrão Técnico</span>
           </div>
         </div>
+
+        {/* Assinatura BotNeural */}
+        <a
+          href="https://botneural.com.br"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '8px',
+            textDecoration: 'none',
+            padding: '20px',
+            marginTop: '10px',
+            fontFamily: 'system-ui, -apple-system, sans-serif',
+            opacity: 0.6,
+            transition: 'opacity 0.3s ease'
+          }}
+          onMouseEnter={(e) => (e.currentTarget.style.opacity = '1')}
+          onMouseLeave={(e) => (e.currentTarget.style.opacity = '0.6')}
+        >
+          <span style={{ fontSize: '12px', fontWeight: 500, color: '#e5e7eb', letterSpacing: '0.5px' }}>ESTRUTURADO POR</span>
+
+          <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+            {/* Ícone Base (Cérebro/Bot) */}
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M12 8V4H8"></path>
+              <rect width="16" height="12" x="4" y="8" rx="2"></rect>
+              <path d="M2 14h2"></path>
+              <path d="M20 14h2"></path>
+              <path d="M15 13v2"></path>
+              <path d="M9 13v2"></path>
+            </svg>
+
+            <span style={{ fontSize: '14px', fontWeight: 700, color: '#ffffff', letterSpacing: '-0.5px' }}>
+              Bot<span style={{ color: '#3b82f6' }}>Neural</span>
+            </span>
+          </div>
+        </a>
       </div>
     </footer>
   );
