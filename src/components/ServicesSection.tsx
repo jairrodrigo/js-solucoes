@@ -30,7 +30,7 @@ const ServicesSection = () => {
                 <div className="p-5 md:p-6 bg-white/10 backdrop-blur-md rounded-2xl md:rounded-[2.5rem] shadow-inner transform group-hover:rotate-6 transition-transform duration-500">
                   <Hammer className="w-10 h-10 md:w-14 md:h-14 text-secondary" />
                 </div>
-                <h3 className="text-4xl md:text-5xl font-black tracking-tighter uppercase leading-none">PEDREIRO</h3>
+                <h3 className="text-4xl md:text-5xl font-black tracking-tighter uppercase leading-none">CONSTRUÇÃO</h3>
               </div>
               <ul className="space-y-5 md:space-y-7 text-white/90">
                 {[
@@ -57,7 +57,7 @@ const ServicesSection = () => {
                 <div className="p-5 md:p-6 bg-primary/5 rounded-2xl md:rounded-[2.5rem] shadow-inner transform group-hover:-rotate-6 transition-transform duration-500">
                   <Paintbrush className="w-10 h-10 md:w-14 md:h-14 text-primary" />
                 </div>
-                <h3 className="text-4xl md:text-5xl font-black tracking-tighter uppercase leading-none">PINTOR</h3>
+                <h3 className="text-4xl md:text-5xl font-black tracking-tighter uppercase leading-none">PINTURA</h3>
               </div>
               <ul className="space-y-5 md:space-y-7 text-muted-foreground">
                 {[

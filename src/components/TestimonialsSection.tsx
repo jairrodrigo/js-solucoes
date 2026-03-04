@@ -4,7 +4,7 @@ import { Star, Quote } from "lucide-react";
 const testimonials = [
     {
         name: "Ricardo Mendes",
-        role: "Corretor de imóveis",
+        role: "Proprietário de Imóvel",
         text: "O nível de acabamento da JC Construções é impressionante. Fizemos todo o porcelanato e a pintura fina com eles. O nivelamento ficou perfeito, sem qualquer ressalto.",
     },
     {
@@ -14,7 +14,7 @@ const testimonials = [
     },
     {
         name: "Marcos Oliveira",
-        role: "Comércio no Centro",
+        role: "Empresário — Reforma Comercial",
         text: "Contratei para a reforma da fachada e interior. O compromisso com o prazo foi o diferencial. Execução rápida e sem desperdício de material.",
     },
 ];

@@ -7,7 +7,7 @@ const ObjectionsSection = () => {
             a: "Trabalhamos com planejamento rigoroso e organização técnica para eliminar imprevistos.",
         },
         {
-            q: "Medo de retrabalho?",
+            q: "Preocupado com retrabalho?",
             a: "Nossa execução é milimétrica, com revisão de acabamento em cada etapa concluída.",
         },
         {
