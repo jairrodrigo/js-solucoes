@@ -52,7 +52,7 @@ const links = [
   {
     label: "Instagram",
     sublabel: "Confira nossas obras",
-    href: "#",
+    href: "https://www.instagram.com/jc.cosntrocoes.obra/",
     icon: InstagramIcon,
     iconBg: "bg-white/10",
     glow: "hover:shadow-[0_10px_40px_-8px_rgba(214,41,118,0.55)] hover:border-[#d62976]/50",
